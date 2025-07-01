@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="women product img/Adobe Express - file (1).png">
+</head>
+<body>
+
+<header>
+    <h1>Your Shopping Cart</h1>
+    <nav>
+         <a href="index.html">HOME</a>
+         <a href="MEN.html">MEN</a>
+        <a href="women.html">WOMEN</a>
+       <a href="cart.html" class="cart-link">Cart</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+</header>
+
+<main id="cartItems"></main>
+
+<footer>
+    <p>&copy; 2025 My Clothing Store.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartSection = document.getElementById('cartItems');
+    if (cart.length === 0) {
+        cartSection.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+        let total = 0;
+        cart.forEach(item => {
+            total += parseFloat(item.price);
+            cartSection.innerHTML += `<div><strong>${item.name}</strong> - $${item.price}</div>`;
+        });
+        cartSection.innerHTML += `<hr><strong>Total: $${total.toFixed(2)}</strong>`;
+    }
+});
+</script>
+
+</body>
+</html>

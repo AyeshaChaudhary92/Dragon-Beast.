@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Women's Collection - My Clothing Store</title>
+    <link rel="stylesheet" href="style.css">
+   <link rel="icon" href="women product img/Adobe Express - file (1).png">
+</head>
+<body>
+
+<header>
+    <h1>Women's Clothing Collection</h1>
+    <nav>
+        <a href="index.html">HOME</a>
+         <a href="MEN.html">MEN</a>
+        <a href="women.html">WOMEN</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+</header>
+
+<main id="womenProducts">
+   
+     <!-- Women's Products will load json-->
+
+</main>
+    <script src="script.js"></script>
+
+
+<footer>
+    <p>&copy; 2025 My Clothing Store. All rights reserved.</p>
+</footer>
+
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('women-products.json')
+        .then(response => response.json())
+        .then(data => {
+            const section = document.getElementById('womenProducts');
+            data.forEach(product => {
+                const div = document.createElement('div');
+                div.className = "product";
+                div.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}"><br>
+                    <strong>${product.name}</strong><br>
+                    Price: $${product.price}<br>
+                    <button onclick="addToCart('${product.id}', '${product.name}', '${product.price}')">Add to Cart</button>
+                `;
+                section.appendChild(div);
+            });
+        });
+});
+
+function addToCart(id, name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ id, name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+}
+</script>
+</body>
+</html>

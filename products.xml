@@ -1,0 +1,14 @@
+<products>
+    <product>
+        <id>1</id>
+        <name>Red Bodycon Dress</name>
+        <price>35.00</price>
+        <image>women product img/bodycon.jpeg</image>
+    </product>
+    <product>
+        <id>2</id>
+        <name>Black Evening Gown</name>
+        <price>55.00</price>
+        <image>women product img/dress6.jpg</image>
+    </product>
+</products>

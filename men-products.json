@@ -1,0 +1,20 @@
+[
+    {
+        "id": "m1",
+        "name": "Men's Blue Shirt",
+        "price": "25.00",
+        "image": "Men’s Product Images/men1.jpg"
+    },
+    {
+        "id": "m2",
+        "name": "Men's Black Shirt",
+        "price": "60.00",
+        "image": "Men’s Product Images/men2.jpg"
+    },
+    {
+        "id": "m3",
+        "name": "Men's Brown Shirt",
+        "price": "40.00",
+        "image": "Men’s Product Images/men3.jpg"
+    }
+]

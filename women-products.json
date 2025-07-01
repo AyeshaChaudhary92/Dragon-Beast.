@@ -1,0 +1,39 @@
+[
+    {
+        "id": "w1",
+        "name": "Bodycon Dress",
+        "price": 39.99,
+        "image": "women product img/bodycon.jpeg"
+    },
+    {
+        "id": "w2",
+        "name": "High Heels",
+        "price": 49.99,
+        "image": "women product img/dress.jpg"
+    },
+    {
+        "id": "w3",
+        "name": "Gold Necklace",
+        "price": 29.99,
+        "image": "women product img/dress3.jpg"
+    },
+    {
+        "id": "w4",
+        "name": "Stylish Handbag",
+        "price": 59.99,
+        "image": "women product img/dress5.jpg"
+    },
+    {
+        "id": "w5",
+        "name": "Floral Skirt",
+        "price": 34.99,
+        "image": "women product img/dress4.jpg"
+    },
+    {
+        "id": "w6",
+        "name": "Casual Top",
+        "price": 24.99,
+        "image": "women product img/dress6.jpg"
+    }
+]
+    

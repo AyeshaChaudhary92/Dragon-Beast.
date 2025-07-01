@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="women product img/Adobe Express - file (1).png">
+</head>
+<body>
+
+<header>
+    <h1>Checkout</h1>
+    <nav>
+         <a href="index.html">HOME</a>
+         <a href="MEN.html">MEN</a>
+        <a href="women.html">WOMEN</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Order Summary:</h2>
+    <div id="orderSummary"></div>
+</main>
+
+<footer>
+    <p>&copy; 2025 My Clothing Store.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const summary = document.getElementById('orderSummary');
+    let total = 0;
+
+    if (cart.length === 0) {
+        summary.innerHTML = "<p>No items to checkout.</p>";
+    } else {
+        cart.forEach(item => {
+            total += parseFloat(item.price);
+            summary.innerHTML += `<p>${item.name} - $${item.price}</p>`;
+        });
+        summary.innerHTML += `<hr><strong>Total: $${total.toFixed(2)}</strong><br><p>Thank you for your purchase!</p>`;
+        localStorage.removeItem('cart');
+    }
+});
+</script>
+
+</body>
+</html>
